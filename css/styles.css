@@ -25,7 +25,8 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+    font-family: 'JetBrains Mono', monospace;
     background: linear-gradient(135deg, #667eea, #764ba2);
     color: var(--dark);
     min-height: 100vh;
@@ -456,6 +457,7 @@ input, select {
 
 .confetti {
     position: absolute;
+    top: 0;
     width: 10px;
     height: 10px;
     background: var(--primary);
