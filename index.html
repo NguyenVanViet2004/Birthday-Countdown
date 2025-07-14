@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Countdown</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-birthday-cake"></i>
+                <span>Birthday Countdown</span>
+            </div>
+            <div class="controls">
+                <button class="btn btn-theme" id="theme-toggle">
+                    <i class="fas fa-moon"></i> Dark Mode
+                </button>
+                <button class="btn">
+                    <i class="fas fa-share-alt"></i> Share
+                </button>
+            </div>
+        </header>
+
+        <main>
+            <div class="card">
+                <h1>Countdown to Your Special Day!</h1>
+                <div class="birthday-input">
+                    <input type="text" id="name" placeholder="Your Name" value="Nguyen Van Viet">
+                    <input type="date" id="birthday" value="2004-05-03">
+                    <button class="save-btn" id="save-birthday">
+                        <i class="fas fa-save"></i> Save Birthday
+                    </button>
+                </div>
+
+                <div class="countdown-container">
+                    <div class="countdown-item">
+                        <div class="countdown-value" id="days">0</div>
+                        <div class="countdown-label">Days</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-value" id="hours">0</div>
+                        <div class="countdown-label">Hours</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-value" id="minutes">0</div>
+                        <div class="countdown-label">Minutes</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-value" id="seconds">0</div>
+                        <div class="countdown-label">Seconds</div>
+                    </div>
+                </div>
+
+                <div class="age-display">
+                    <div class="age-card">
+                        <h3>Current Age</h3>
+                        <p id="current-age">0</p>
+                    </div>
+                    <div class="age-card">
+                        <h3>Turning Age</h3>
+                        <p id="upcoming-age">0</p>
+                    </div>
+                </div>
+
+                <div class="progress-container">
+                    <div class="progress-header">
+                        <span>Year Progress</span>
+                        <span id="progress-percent">100%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill">100%</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Friends' Birthdays</h2>
+                <div class="friends-container" id="friends-container">
+                    <div class="friend-card add-friend" id="add-friend">
+                        <i class="fas fa-plus-circle"></i>
+                        <div>Add Friend's Birthday</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div class="celebration" id="celebration">
+        <h1>Happy Birthday!</h1>
+        <p>Wishing you a fantastic day filled with joy and laughter!</p>
+        <button class="save-btn" id="close-celebration">Continue</button>
+    </div>
+
+    <!-- Friend Modal -->
+    <div class="modal" id="friend-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modal-title">Add Friend's Birthday</h3>
+                <button class="close-modal" id="close-modal">&times;</button>
+            </div>
+            <form id="friend-form">
+                <input type="hidden" id="friend-id">
+                <div class="form-group">
+                    <label for="friend-name">Name</label>
+                    <input type="text" id="friend-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="friend-birthday">Birthday</label>
+                    <input type="date" id="friend-birthday" required>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn" id="cancel-friend">Cancel</button>
+                    <button type="submit" class="btn btn-success">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div class="modal" id="delete-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Confirm Delete</h3>
+                <button class="close-modal" id="close-delete-modal">&times;</button>
+            </div>
+            <p>Are you sure you want to delete this friend's birthday?</p>
+            <div class="modal-actions">
+                <button type="button" class="btn" id="cancel-delete">Cancel</button>
+                <button type="button" class="btn btn-danger" id="confirm-delete">Delete</button>
+            </div>
+        </div>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
